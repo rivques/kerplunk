@@ -16,8 +16,9 @@ pub enum Element {
     Variable(String),
 }
 
+
 impl Display for Element {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Element::Operator(op) => write!(f, "{}", op.to_string()),
             Element::Number(num) => write!(f, "Number{{{}}}", num),
@@ -33,7 +34,7 @@ impl Expression {
 }
 
 impl Display for Expression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         write!(f, "{}", self.element.to_string())
     }
 }

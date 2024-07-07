@@ -5,3 +5,7 @@ pub struct WrongNumberOfArgumentsError {
     pub expected: usize,
     pub actual: usize,
 }
+
+#[derive(thiserror::Error, Debug)]
+#[error("Attempted to reduce a non-reduceible expression")]
+pub struct NonreduceibleExpressionError;
